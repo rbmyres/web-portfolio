@@ -25,7 +25,7 @@ function Projects() {
                 </div>
 
                 <div className="links">
-                    <a href="https://client-qfaf.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://mixer.rbmyres.com/" target="_blank" rel="noopener noreferrer">
                         <span><FaExternalLinkAlt /></span>
                         Website
                     </a>
