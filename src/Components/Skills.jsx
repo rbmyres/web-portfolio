@@ -1,109 +1,58 @@
+const skillsData = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", icon: "react.svg" },
+      { name: "Vite", icon: "vite.svg" },
+      { name: "HTML5", icon: "html5.svg" },
+      { name: "CSS3", icon: "css3.svg" },
+      { name: "Javascript", icon: "javascript.svg" },
+      { name: "Sass", icon: "sass.svg" },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: "node.svg" },
+      { name: "Express", icon: "express.svg" },
+      { name: "PHP", icon: "php.svg" },
+      { name: "MySQL", icon: "mysql.svg" },
+      { name: "JWT", icon: "jwt.svg" },
+    ],
+  },
+  {
+    category: "Languages & Tools",
+    skills: [
+      { name: "Java", icon: "java.svg" },
+      { name: "Python", icon: "python.svg" },
+      { name: "Docker", icon: "docker.svg" },
+      { name: "Git", icon: "git.svg" },
+      { name: "Cloud Deployment", icon: "cloudflare.svg" },
+      { name: "Agile Development", icon: "agile.svg" },
+    ],
+  },
+];
+
 function Skills() {
   return (
     <div className="skillsDiv">
-        <div className="skills">Skills</div>
+      <div className="skills">Skills</div>
 
-        <div className="skillSection">
-            <div className="title">Frontend</div>
-            <div className="groupDiv">
-                <div className="skill">
-                    <img src="../icons/react.svg" alt="React Icon" />
-                    <span className="text">React</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/vite.svg" alt="Vite Icon" />
-                    <span className="text">Vite</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/html5.svg" alt="HTML5 Icon" />
-                    <span className="text">HTML5</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/css3.svg" alt="CSS3 Icon" />
-                    <span className="text">CSS3</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/javascript.svg" alt="Javascript Icon" />
-                    <span className="text">Javascript</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/sass.svg" alt="Sass Icon" />
-                    <span className="text">Sass</span>
-                </div>
-            </div>
+      {skillsData.map((section) => (
+        <div className="skillSection" key={section.category}>
+          <div className="title">{section.category}</div>
+          <div className="groupDiv">
+            {section.skills.map((skill) => (
+              <div className="skill" key={skill.name}>
+                <img src={`../icons/${skill.icon}`} alt={`${skill.name} Icon`} />
+                <span className="text">{skill.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        
-        <div className="skillSection">
-            <div className="title">Backend</div>
-            <div className="groupDiv">
-                <div className="skill">
-                    <img src="../icons/node.svg" alt="Node.js Icon" />
-                    <span className="text">Node.js</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/express.svg" alt="Express Icon" />
-                    <span className="text">Express</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/php.svg" alt="PHP Icon" />
-                    <span className="text">PHP</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/mysql.svg" alt="MySQL Icon" />
-                    <span className="text">MySQL</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/jwt.svg" alt="JWT Icon" />
-                    <span className="text">JWT</span>
-                </div>
-            </div>
-        </div>
-
-        <div className="skillSection">
-            <div className="title">Languages & Tools</div>
-            <div className="groupDiv">
-                <div className="skill">
-                    <img src="../icons/java.svg" alt="Java Icon" />
-                    <span className="text">Java</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/python.svg" alt="Python Icon" />
-                    <span className="text">Python</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/docker.svg" alt="Docker Icon" />
-                    <span className="text">Docker</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/git.svg" alt="Git Icon" />
-                    <span className="text">Git</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/cloudflare.svg" alt="Cloudflare Icon" />
-                    <span className="text">Cloud Deployment</span>
-                </div>
-
-                <div className="skill">
-                    <img src="../icons/agile.svg" alt="Agile Icon" />
-                    <span className="text">Agile Development</span>
-                </div>
-            </div>
-        </div>
+      ))}
     </div>
-  )
+  );
 }
 
 export default Skills
